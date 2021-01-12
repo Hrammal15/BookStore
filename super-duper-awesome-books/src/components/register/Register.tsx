@@ -49,25 +49,15 @@ const handleSubmit = async (e:SyntheticEvent) => {
             userPassword:password
         }
 
-        axios.post(`http://localhost:8080/users`, { newUser })
+        console.log(newUser)
+
+       let res = axios.post(`http://localhost:8080/register`, newUser)
         .then(res => {
         console.log(res);
         console.log(res.data);
       })
     }
-    // const submitLogin = async (e:SyntheticEvent) => {
-    //     //wwhat does submit normally do?
-    //     e.preventDefault()
-    //     //send username and password to a remote location to get the user info/auth token
-    //     try {
-    //         let user = await e720Login(username, password)
-    //         props.updateCurrentUser(user)
-    //     }catch(e){
-    //         changePassword("")
-    //         toast.error(e.message)
-    //     }
-    // }
-   
+
 
     return(
      <div>
